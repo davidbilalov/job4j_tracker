@@ -11,4 +11,5 @@ public class DummyDic {
         String s = "qwerty";
         System.out.println(word.engToRus(s));
     }
+
 }
