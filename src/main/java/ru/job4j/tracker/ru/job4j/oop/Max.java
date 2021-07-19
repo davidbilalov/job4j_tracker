@@ -1,21 +1,21 @@
 package ru.job4j.tracker.ru.job4j.oop;
 
 public class Max {
-    public static double add(double first, double second) {
+    public static double max(double first, double second) {
         return first > second ? first : second;
     }
 
-    public static double add(double first, double second, double third) {
-        return add(
+    public static double max(double first, double second, double third) {
+        return max(
                 first,
-                add(second, third)
+                max(second, third)
         );
     }
 
-    public static double add(double first, double second, double third, double four) {
-        return add(
+    public static double max(double first, double second, double third, double four) {
+        return max(
                 first,
-                add(second, third, four)
+                max(second, third, four)
         );
     }
 

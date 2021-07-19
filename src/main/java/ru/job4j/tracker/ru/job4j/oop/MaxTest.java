@@ -8,7 +8,7 @@ public class MaxTest {
     public void whenMax1To2Then2() {
         double first = 1;
         double second = 2;
-        double two = Max.add(first, second);
+        double two = Max.max(first, second);
         double expected = 2;
         Assert.assertEquals(two, expected, 0.001);
     }
@@ -18,7 +18,7 @@ public class MaxTest {
         double first = 1;
         double second = 2;
         double third = 3;
-        double three = Max.add(first, second, third);
+        double three = Max.max(first, second, third);
         double expected = 3;
         Assert.assertEquals(three, expected, 0.001);
     }
@@ -29,7 +29,7 @@ public class MaxTest {
         double second = 2;
         double third = 3;
         double four = 4;
-        double fourth = Max.add(first, second, third, four);
+        double fourth = Max.max(first, second, third, four);
         double expected = 4;
        Assert.assertEquals(fourth, expected, 0.001);
     }
