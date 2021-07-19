@@ -34,7 +34,6 @@ public class Triangle {
         if (this.exist(ab, ac, bc)) {
             double p = semiPerimeter(ab, ac, bc);
             rsl = sqrt(p * (p - ab) * (p - ac) * (p - bc));
-            /* написать формулу для расчета площади треугольника. */
         }
         return rsl;
     }
