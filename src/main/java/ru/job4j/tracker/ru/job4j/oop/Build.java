@@ -1,9 +1,9 @@
 package ru.job4j.tracker.ru.job4j.oop;
 
 public class Build extends Engineer {
-    private int x;
+    private int build;
 
-    public int getX() {
-        return x;
+    public int getBuild() {
+        return build;
     }
 }
