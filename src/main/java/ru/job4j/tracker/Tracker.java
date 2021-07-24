@@ -22,4 +22,15 @@ public class Tracker {
         }
         return rsl;
     }
+
+    public Item[] findByName(String key) {
+        return null;
+    }
+
+    public Item[] findAll() {
+        return null;
+    }
+//    получение списка всех заявок - public Item[] findAll();
+//    получение списка по имени - public Item[] findByName(String key);
+//    получение заявки по id - public Item findById(int id);
 }
