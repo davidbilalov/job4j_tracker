@@ -34,9 +34,8 @@ public class Tracker {
                 count++;
             }
         }
-        Item[] listreturn =  Arrays.copyOf(list, count);
 
-        return listreturn;
+        return Arrays.copyOf(list, count);
     }
 
     public Item[] findAll() {
@@ -48,8 +47,7 @@ public class Tracker {
                 count++;
             }
         }
-        Item[] listReturn = Arrays.copyOf(list, count);
-        return listReturn;
+        return Arrays.copyOf(list, count);
     }
 //    получение списка всех заявок - public Item[] findAll();
 //    получение списка по имени - public Item[] findByName(String key);
