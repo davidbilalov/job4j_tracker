@@ -13,15 +13,8 @@ public class Tracker {
     }
 
     public Item findById(int id) {
-        Item rsl = null;
-        for (int index = 0; index < size; index++) {
-            Item item = items[index];
-            if (item.getId() == id) {
-                rsl = item;
-                break;
-            }
-        }
-        return rsl;
+        int index = indexOf(id);
+        return index != -1 ? items[index] : null;
     }
 
     public Item[] findByName(String key) {
@@ -39,17 +32,22 @@ public class Tracker {
     }
 
     public Item[] findAll() {
-        int count = 0;
-        Item[] list = new Item[size];
+        return Arrays.copyOf(items, size);
+    }
+
+    private int indexOf(int id) {
+        int rsl = -1;
         for (int index = 0; index < size; index++) {
-            if (!(items[index].equals(null))) {
-                list[count] = items[index];
-                count++;
+            if (items[index].getId() == id) {
+                rsl = index;
+                break;
             }
         }
-        return Arrays.copyOf(list, count);
+        return rsl;
     }
-//    получение списка всех заявок - public Item[] findAll();
-//    получение списка по имени - public Item[] findByName(String key);
-//    получение заявки по id - public Item findById(int id);
+
+    public boolean replace(int id, Item item) {
+        int index = indexOf(id);
+        return false;
+    }
 }
