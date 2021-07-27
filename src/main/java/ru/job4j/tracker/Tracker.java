@@ -54,6 +54,8 @@ public class Tracker {
     }
 
     public boolean delete(int id) {
+        int index = indexOf(id);
+        System.arraycopy(items, index + 1, items, index, size - index - 1);
         return true;
     }
 }
