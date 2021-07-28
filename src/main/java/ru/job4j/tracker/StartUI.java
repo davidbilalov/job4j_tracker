@@ -35,10 +35,10 @@ public class StartUI {
                     for (Item item : items) {
                         System.out.println(item);
                     }
+                } else {
+                    System.out.println("Хранилище еще не содержит заявок");
                 }
-            } else if (select == 6) {
-                run = false;
-            } else if (select == 2) {
+            }  else if (select == 2) {
                 StartUI.replace(input, tracker);
             } else if (select == 3) {
                     StartUI.delete(input);
@@ -65,7 +65,9 @@ public class StartUI {
                 } else {
                     System.out.println("Заявки с именем: " + name + " не найдены.");
                 }
-            }
+            } else if (select == 6) {
+                    run = false;
+                }
         }
     }
 
