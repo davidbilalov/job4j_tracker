@@ -9,7 +9,12 @@ public class MagicBall {
         Scanner input = new Scanner(System.in);
         String question = input.nextLine();
         int answer = new Random().nextInt(3);
-        String str = answer == 0 ? "Да" : answer == 1 ? "Нет" : "Может быть";
-        System.out.println(str);
+        if (answer == 0) {
+            System.out.println("Да");
+        } else if (answer == 1) {
+            System.out.println("Нет");
+        } else {
+            System.out.println("Может быть");
+        }
     }
 }
