@@ -18,7 +18,7 @@ public class StartUI {
     }
 
     public static void delete(Input input) {
-        int id = Integer.parseInt(input.askStr("Enter id: "));
+        int id = input.askInt("");
     }
 
     public void init(Input input, Tracker tracker) {
@@ -46,7 +46,7 @@ public class StartUI {
             } else if (select == 4) {
                 System.out.println("=== Find item by id ====");
                 System.out.print("Enter id: ");
-                int id = Integer.parseInt(input.askStr("Enter id: "));
+                int id = input.askInt("");
                 Item item = tracker.findById(id);
                 if (item != null) {
                     System.out.println(item);
@@ -56,7 +56,7 @@ public class StartUI {
             } else if (select == 5) {
                 System.out.println("=== Find items by name ====");
                 System.out.print("Enter name: ");
-                String name = input.askStr("Enter id: ");
+                String name = input.askStr("");
                 Item[] items = tracker.findByName(name);
                 if (items.length > 0) {
                     for (Item item : items) {
