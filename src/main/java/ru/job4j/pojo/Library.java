@@ -20,21 +20,19 @@ public class Library {
         array[2] = star;
         array[3] = cleancode;
 
-        for(int index = 0; index < array.length; index++) {
-            Book book = array[index];
+        for (Book book : array) {
             System.out.println(book.getName());
         }
         Book temp = array[0];
         array[0] = array[3];
         array[3] = temp;
         System.out.println();
-        for(int index = 0; index < array.length; index++) {
-            Book book = array[index];
+        for (Book book : array) {
             System.out.println(book.getName());
         }
         System.out.println();
-        for (int index = 0; index < array.length; index++) {
-            if(array[index] == cleancode) {
+        for (Book book : array) {
+            if (book == cleancode) {
                 System.out.println(cleancode.getName());
             }
         }
