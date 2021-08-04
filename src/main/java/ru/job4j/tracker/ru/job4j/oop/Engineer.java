@@ -6,4 +6,24 @@ public class Engineer extends Profession {
     public String getMyFantasyIsOver() {
         return myFantasyIsOver;
     }
+
+    @Override
+    public String getName() {
+        return super.getName();
+    }
+
+    @Override
+    public int getBirthday() {
+        return super.getBirthday();
+    }
+
+    @Override
+    public String getEducation() {
+        return super.getEducation();
+    }
+
+    @Override
+    public String getSurname() {
+        return super.getSurname();
+    }
 }
