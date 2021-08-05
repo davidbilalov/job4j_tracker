@@ -32,7 +32,7 @@ public class Library {
         }
         System.out.println();
         for (Book book : array) {
-            if (book == cleancode) {
+            if (book.getName() == cleancode.getName()) {
                 System.out.println(cleancode.getName());
             }
         }
