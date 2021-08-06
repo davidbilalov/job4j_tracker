@@ -18,12 +18,13 @@ public class UserStore {
         return true;
     }
 
-    public static void main(String[] args) throws UserNotFoundException {
+    public static void main(String[] args) {
         User[] users = {
                 new User("Petr Arsentev", true)
         };
-        User user = findUser(users, "Petr Arsentev");
         try {
+            User user = findUser(users, "Petr Arsentev");
+
             if (validate(user)) {
                 System.out.println("This user has an access");
             }
