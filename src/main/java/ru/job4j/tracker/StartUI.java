@@ -1,7 +1,7 @@
 package ru.job4j.tracker;
 
-
 public class StartUI {
+
     public static void createItem(Input input, Tracker tracker) {
         System.out.println("=== Create a new Item ====");
         String name = input.askStr("Enter name: ");
@@ -9,6 +9,7 @@ public class StartUI {
         tracker.add(item);
         System.out.println("Добавленная заявка: " + item);
     }
+
     public static void replaceItem(Input input, Tracker tracker) {
         System.out.println("=== Edit item ====");
         int id = input.askInt("Enter id: ");
@@ -66,7 +67,6 @@ public class StartUI {
             System.out.println("Заявки с именем: " + name + " не найдены.");
         }
     }
-
 
     public void init(Input input, Tracker tracker, UserAction[] actions) {
         boolean run = true;
