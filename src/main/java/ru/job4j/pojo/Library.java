@@ -3,7 +3,7 @@ package ru.job4j.pojo;
 public class Library {
     public static void main(String[] args) {
         Book cleancode = new Book();
-        cleancode.setName("Clean code");
+        cleancode.setName("Clean Code");
 
         Book sun = new Book();
         sun.setName("Sun");
@@ -32,7 +32,7 @@ public class Library {
         }
         System.out.println();
         for (Book book : array) {
-            if (book.getName().equals(cleancode.getName())) {
+            if ("Clean Code".equals(book.getName())) {
                 System.out.println(cleancode.getName());
             }
         }
