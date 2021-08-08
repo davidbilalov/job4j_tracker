@@ -1,8 +1,9 @@
 package ru.job4j.tracker;
 
 import org.junit.Test;
-import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.*;
+import static org.hamcrest.Matchers.is;
+import static org.hamcrest.Matchers.nullValue;
+import static org.junit.Assert.assertThat;
 
 public class StartUITest {
     @Test
@@ -18,29 +19,40 @@ public class StartUITest {
 
     @Test
     public void whenReplaceItem() {
+        Output output = new StubOutput();
         Tracker tracker = new Tracker();
-        Item item = new Item("new item");
-        tracker.add(item);
-        String[] answers = {
-                String.valueOf(item.getId()),
-                "replaced item"
+        /* Добавим в tracker новую заявку */
+        Item item = tracker.add(new Item("Replaced item"));
+        /* Входные данные должны содержать ID добавленной заявки item.getId() */
+        String replacedName = "New item name";
+        Input in = new StubInput(
+                new String[] {"0", String.valueOf(item.getId()), "1", "1", "New item name", "2"}
+        );
+        UserAction[] actions = {
+                new CreateAction(output),
+                new ReplaceAction(),
+                new Exit()
         };
-        StartUI.replaceItem(new StubInput(answers), tracker);
-        Item replaced = tracker.findById(item.getId());
-        assertThat(replaced.getName(), is("replaced item"));
+        new StartUI(output).init(in, tracker, actions);
+        assertThat(tracker.findById(item.getId()).getName(), is(replacedName));
     }
 
     @Test
     public void whenDeleteItem() {
         Tracker tracker = new Tracker();
-        Item item = new Item("delete item");
-        tracker.add(item);
-        String[] answers = {
-                String.valueOf(item.getId())
+        Output output = new StubOutput();
+        /* Добавим в tracker новую заявку */
+        Item item = tracker.add(new Item("Deleted item"));
+        /* Входные данные должны содержать ID добавленной заявки item.getId() */
+        Input in = new StubInput(
+                new String[] {"0", String.valueOf(item.getId()), "1"}
+        );
+        UserAction[] actions = {
+                new DeleteAction(),
+                new Exit()
         };
-        StartUI.deleteItem(new StubInput(answers), tracker);
-        Item deleted = tracker.findById(item.getId());
-         assertNull(deleted);
+        new StartUI(output).init(in, tracker, actions);
+        assertThat(tracker.findById(item.getId()), is(nullValue()));
     }
 
     @Test
@@ -51,26 +63,11 @@ public class StartUITest {
         );
         Tracker tracker = new Tracker();
         UserAction[] actions = {
-                new CreateAction(output)
+                new CreateAction(output),
+                new Exit()
         };
         new StartUI(output).init(in, tracker, actions);
         assertThat(tracker.findAll()[0].getName(), is("Item name"));
     }
 
-    @Test
-    public void whenExit() {
-        Output out = new StubOutput();
-        Input in = new StubInput(
-                new String[] {"0"}
-        );
-        Tracker tracker = new Tracker();
-        UserAction[] actions = {
-                new Exit()
-        };
-        new StartUI(out).init(in, tracker, actions);
-        assertThat(out.toString(), is(
-                "Menu." + System.lineSeparator()
-                       + "0. Exit" + System.lineSeparator()
-        ));
-    }
 }
