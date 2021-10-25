@@ -1,5 +1,6 @@
 package ru.job4j.tracker;
 
+@SuppressWarnings("checkstyle:WhitespaceAround")
 public class FindItemByName implements UserAction{
     @Override
     public String name() {
