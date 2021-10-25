@@ -1,7 +1,5 @@
 package ru.job4j.tracker.ru.job4j.oop;
 
-import java.util.logging.LoggingPermission;
-
 public class Surgeon extends Doctor {
     private int operation;  // количество операций
 
