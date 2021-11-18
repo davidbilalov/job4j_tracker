@@ -6,6 +6,7 @@ public class College {
         student.setDate("10");
         student.setFio("D B R");
         student.setGroup("2b");
-        System.out.println(" date: " + student.getDate() + "  Fio: " + student.getFio() + " group: " + student.getGroup() );
+        System.out.println(" date: " + student.getDate()
+                + "  Fio: " + student.getFio() + " group: " + student.getGroup());
     }
 }
